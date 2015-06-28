@@ -1,0 +1,9 @@
+News-Enabled: true
+current-news: 'This is the default news!'
+anti-swear_enabled: true
+blockedwords:
+  - fuck
+  - penis
+  - shit
+  - ass
+  - nigger

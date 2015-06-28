@@ -1,0 +1,16 @@
+name: SocialCitizens
+main: me.bman7842.socialcitizens.Main
+version: 0.3
+author: bman7842
+description: Social Citizens plugin
+commands:
+  send:
+    description: Send a message to a player
+  shout:
+    description: Shout a global message
+  trade:
+    description: Send an item to a player
+  news:
+    description: Get the current news
+  cc:
+    description: Clears the chat!
