@@ -85,7 +85,7 @@ public class GameChangingCommands implements Listener, CommandExecutor{
             Player p = (Player)sender;
             if (cmd.getName().equalsIgnoreCase("trade")) 
             {
-            	if(p.hasPermission("socialcitizens.trade"))
+            	if(p.hasPermission("sc.trade"))
             	{
             		if(playerstrading.contains(p)) 
             		{
