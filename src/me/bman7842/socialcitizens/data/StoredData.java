@@ -12,4 +12,8 @@ public class StoredData {
     public static void setNews(String str) { news = str; }
     public static String getNews() { return news; }
 
+    private static Integer pokeDelayTime = 10;
+    public static void setPokeDelayTime(Integer amount) { pokeDelayTime = amount; }
+    public static Integer getPokeDelayTime() { return pokeDelayTime; }
+
 }

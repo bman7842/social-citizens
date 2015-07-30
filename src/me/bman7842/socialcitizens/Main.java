@@ -2,6 +2,7 @@ package me.bman7842.socialcitizens;
  
 import me.bman7842.socialcitizens.commands.ChatRelatedCommands;
 import me.bman7842.socialcitizens.commands.GameChangingCommands;
+import me.bman7842.socialcitizens.commands.pokeCommands;
 import me.bman7842.socialcitizens.data.StoredData;
 import me.bman7842.socialcitizens.listener.ChatEvent;
 import me.bman7842.socialcitizens.utils.ChatAbuseCheck;
@@ -20,6 +21,7 @@ public class Main extends JavaPlugin {
     GameChangingCommands gamechangingcmds;
     ChatRelatedCommands chatcmds;
     ChatEvent cEvent;
+    pokeCommands pokecmd;
 
     //SettingsManager\\
     SettingsManager settings;
@@ -32,6 +34,7 @@ public class Main extends JavaPlugin {
     	gamechangingcmds = new GameChangingCommands(this);
     	chatcmds = new ChatRelatedCommands(this);
         cEvent = new ChatEvent();
+        pokecmd = new pokeCommands(this);
 
     	//Reigstering Events\\
     	PluginManager pm = this.getServer().getPluginManager();
@@ -40,10 +43,10 @@ public class Main extends JavaPlugin {
 
     	//Registering Commands\\
     	getCommand("cc").setExecutor(chatcmds);
-    	getCommand("send").setExecutor(chatcmds);
     	getCommand("shout").setExecutor(chatcmds);
     	getCommand("news").setExecutor(chatcmds);
     	getCommand("trade").setExecutor(gamechangingcmds);
+        getCommand("poke").setExecutor(pokecmd);
 
     }
 
@@ -75,6 +78,11 @@ public class Main extends JavaPlugin {
         } catch (Exception e) {
             Bukkit.getLogger().warning("There is an error in your config, your MOTD/News configs are not properly setup!");
             StoredData.setNewsEnabled(false);
+        }
+        try {
+            StoredData.setPokeDelayTime(settings.getConfig().getInt("poke_delay_time_seconds"));
+        } catch (Exception e) {
+            Bukkit.getLogger().warning("There is an error in your config, your poke dleay time is not properly setup!");
         }
     }
 

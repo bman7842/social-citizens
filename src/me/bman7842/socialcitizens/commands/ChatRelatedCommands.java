@@ -101,26 +101,6 @@ public class ChatRelatedCommands implements CommandExecutor{
 			}
 		}
 		
-		if (cmd.getName().equalsIgnoreCase("send")) {
-                if (args.length == 0) {
-						Messages.sendErrorMessage(p.getUniqueId(), "Incorrect format, please try /send (username) (message)");
-                } else if (args.length > 1) {
-                        Player targetplayer = p.getServer().getPlayer(args[0]);
-                        if (targetplayer != null) {
-                        	String msg = (ChatColor.RED + p.getName() + "says: " + ChatColor.GRAY);
-                        	for(int i = 1; i < args.length; i++){
-                        	msg = msg + " " + args[i];
-                       		}
-							Messages.sendAlertMessage(p.getUniqueId(), "Your message was successfully sent to " + targetplayer.getDisplayName());
-                        	targetplayer.sendMessage(ChatColor.translateAlternateColorCodes('&', msg));
-							SoundEffects.playMessageSound(targetplayer);
-                        } else {
-                        	Messages.sendErrorMessage(p.getUniqueId(), "The user you requested is not online right now!");
-                        }
-                }
-			return false;
-        }
-		
 		return false;
     }
 

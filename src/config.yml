@@ -1,6 +1,7 @@
 News-Enabled: true
 current-news: 'This is the default news!'
 anti-swear_enabled: true
+poke_delay_time_seconds: 10
 blockedwords:
   - fuck
   - penis
