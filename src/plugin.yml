@@ -1,6 +1,6 @@
 name: SocialCitizens
 main: me.bman7842.socialcitizens.Main
-version: 0.35
+version: 0.36
 author: bman7842
 description: Social Citizens plugin
 commands:

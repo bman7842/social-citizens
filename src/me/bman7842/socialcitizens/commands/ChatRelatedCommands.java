@@ -30,6 +30,11 @@ public class ChatRelatedCommands implements CommandExecutor{
 	 */
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
+		if (!(sender instanceof Player)) {
+			sender.sendMessage("You must be a player to perform this command!");
+			return false;
+		}
+
 		Player p = (Player)sender;
 		
 		if (cmd.getName().equalsIgnoreCase("news")) {
